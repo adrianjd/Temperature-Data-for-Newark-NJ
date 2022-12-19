@@ -35,7 +35,8 @@ def get_weather_data(filename, dates, highs, lows):
                 
 
 # Weather data for Newark, NJ, 2021
-filename = 'data/newark_2021.csv'
+# Python project should be opened in same folder as csv file
+filename = 'newark_2021.csv' 
 dates, highs, lows = [], [], []
 get_weather_data(filename, dates, highs, lows)
 
