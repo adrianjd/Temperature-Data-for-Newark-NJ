@@ -30,8 +30,8 @@ def get_weather_data(filename, dates, highs, lows):
                 highs.append(high)
                 lows.append(low)
         # Checking what the highest and lowest temp values are.
-        """ print(min(lows))
-            print(max(highs))"""
+        print(f"The lowest recorded temperature was {min(lows)} degrees Fahrenheit.")
+        print(f"The highest recorded temperature was {max(highs)} degrees Fahrenheit.")
                 
 
 # Weather data for Newark, NJ
@@ -52,14 +52,14 @@ y_min = min(lows)
 lows_pos = lows.index(y_min)
 x_min = dates[lows_pos]
 ax.scatter(x_min, y_min, c='blue', edgecolors='none', s=100)
-plt.annotate(f'16 °F\n{x_min}', xy=(x_min, y_min), xytext=(x_min, 4))
+plt.annotate(f'{y_min} °F\n{x_min}', xy=(x_min, y_min), xytext=(x_min, (y_min-12))
 
 # Highlight the highest temperature
 y_max = max(highs)
 highs_pos = highs.index(y_max)
 x_max = dates[highs_pos]
 ax.scatter(x_max, y_max, c='red', edgecolors='none', s=100)
-plt.annotate(f'103 °F\n{x_max}', xy=(x_max, y_max), xytext=(x_max, 108))
+plt.annotate(f'{y_max} °F\n{x_max}', xy=(x_max, y_max), xytext=(x_max, {y_max+5}))
 
 # Format plot, change title where appropriate
 title = "Daily High and Low Temperatures - 2021\nNewark, New Jersey"
