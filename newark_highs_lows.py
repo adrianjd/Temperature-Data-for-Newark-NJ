@@ -34,13 +34,13 @@ def get_weather_data(filename, dates, highs, lows):
             print(max(highs))"""
                 
 
-# Weather data for Newark, NJ, 2021
+# Weather data for Newark, NJ
 # Python project should be opened in same folder as csv file
 filename = 'newark_2021.csv' 
 dates, highs, lows = [], [], []
 get_weather_data(filename, dates, highs, lows)
 
-# Plot 2021 weather.
+# Plot weather.
 plt.style.use('fivethirtyeight')
 fig, ax = plt.subplots(figsize=(15, 8))
 ax.plot(dates, highs, c='red', alpha=0.5)
@@ -61,7 +61,7 @@ x_max = dates[highs_pos]
 ax.scatter(x_max, y_max, c='red', edgecolors='none', s=100)
 plt.annotate(f'103 °F\n{x_max}', xy=(x_max, y_max), xytext=(x_max, 108))
 
-# Format plot.
+# Format plot, change title where appropriate
 title = "Daily High and Low Temperatures - 2021\nNewark, New Jersey"
 plt.title(title, fontsize=24)
 plt.xlabel('', fontsize=16)
